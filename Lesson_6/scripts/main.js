@@ -112,14 +112,36 @@ console.log(deckCards);
 
 /* Another version */
 const deckCardsMap = {
-    cardSuit: ['spade', 'diamond', 'heart', 'clubs'],
-    value: [...range(6, 10), 'ace', 'jack', 'queen', 'king', 'joker'],
-    color: ['red', 'black'],
+    cardSuit: [`spade`, `diamond`, `heart`, `clubs`],
+    value: [...range(6, 10), `ace`, `jack`, `queen`, `king`, `joker`],
+    color: [`red`, `black`],
 }
 
 const deck = []
 deckCardsMap.cardSuit.map((suit, key) => deckCardsMap.value.map(el => deck.push(({cardSuit: suit, value: el, color: suit === `diamond` || suit === `clubs` ? deckCardsMap.color[1] : deckCardsMap.color[0]}))))
 console.log(deck)
+
+// - знайти піковий туз
+const spadeCards = deck.filter(card => card.cardSuit === `spade` && card.value === `ace`)
+console.log(`spade ace card`, spadeCards)
+
+// - всі шістки
+const sixCards = deck.filter(card => +card.value === 6)
+console.log(`six card`, sixCards)
+
+// - всі червоні карти
+const redCards = deck.filter(card => card.color === `red`)
+console.log(`red card`, redCards)
+
+// - всі буби
+const diamondCards = deck.filter(card => card.cardSuit === `diamond`)
+console.log(`diamond card`, diamondCards)
+
+// - всі трефи від 9 та більше
+const clubsCards = deck.filter(card => card.cardSuit === `clubs` && (card.value > 9 || typeof card.value === `string`))
+console.log(`clubs card`, clubsCards)
+
+
 
 // =========================
 //
