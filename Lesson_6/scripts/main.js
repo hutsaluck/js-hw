@@ -109,6 +109,18 @@ const deckCards = {
 
 console.log(deckCards);
 
+
+/* Another version */
+const deckCardsMap = {
+    cardSuit: ['spade', 'diamond', 'heart', 'clubs'],
+    value: [...range(6, 10), 'ace', 'jack', 'queen', 'king', 'joker'],
+    color: ['red', 'black'],
+}
+
+const deck = []
+deckCardsMap.cardSuit.map((suit, key) => deckCardsMap.value.map(el => deck.push(({cardSuit: suit, value: el, color: suit === `diamond` || suit === `clubs` ? deckCardsMap.color[1] : deckCardsMap.color[0]}))))
+console.log(deck)
+
 // =========================
 //
 //     Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
@@ -136,6 +148,33 @@ const deckCardSort = Object.values(deckCards).reduce((accumulator, value, key) =
 })
 
 console.log(deckCardSort);
+
+/* Another version */
+const deckSort = Object.values(deck).reduce((accumulator, card, key) => {
+    switch (card.cardSuit) {
+        case `spade`:
+            accumulator.spades.push(card)
+            break
+        case `diamond`:
+            accumulator.diamonds.push(card)
+            break
+        case `heart`:
+            accumulator.hearts.push(card)
+            break
+        case `clubs`:
+            accumulator.clubs.push(card)
+            break
+    }
+
+    return accumulator
+}, {
+    spades: [],
+    diamonds: [],
+    hearts: [],
+    clubs: []
+})
+
+console.log(deckSort);
 
 
 // =========================
