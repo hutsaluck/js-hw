@@ -164,11 +164,16 @@ car_class.changeYear(2021)
 car_class.addDriver({name: `Name`, surname: `Surname`, email: `email@gmail.com`, phone: `+380971234561`})
 
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
-
-class Cinderella {
-    constructor(name, age, size_foot) {
+class Human {
+    constructor(name, age) {
         this.name = name
         this.age = age
+    }
+}
+
+class Cinderella extends Human {
+    constructor(name, age, size_foot) {
+        super(name, age)
         this.size_foot = size_foot
     }
 }
@@ -182,10 +187,9 @@ console.log(`cinderellas`, cinderellas);
 
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
 
-class Prince {
+class Prince extends Human {
     constructor(name, age, slipper_size) {
-        this.name = name
-        this.age = age
+        super(name, age)
         this.slipper_size = slipper_size
     }
 }
@@ -201,7 +205,7 @@ console.log(`prince`, prince)
 
 let foundCinderella = [];
 
-for (let cinderella of cinderellas) {
+for (const cinderella of cinderellas) {
     if (cinderella.size_foot === prince.slipper_size) {
         foundCinderella.push(cinderella)
     }
@@ -249,3 +253,6 @@ Array.prototype.myFilter = function (callback) {
 const array = [1, 2, 3, 4, 5]
 const filterArray = array.myFilter(el => !(el % 2))
 console.log(`filterArray`, filterArray)
+
+
+
