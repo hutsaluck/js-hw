@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<main>
+    <section class="user-form">
+        <h2>Дані користувача</h2>
+        <form name="user_data">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Name">
+            <label for="surname">Surname:</label>
+            <input type="text" name="surname" id="surname" placeholder="Surname">
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" placeholder="Age">
+            <input type="submit" value="Submit">
+        </form>
+
+        <div class="output">
+            <img src="./images/close.svg" class="close" alt="close">
+            <img src="./images/user.png" class="user-image" alt="user">
+            <p><strong>Name:</strong> <span id="user_name"></span></p>
+            <p><strong>Surname:</strong> <span id="user_surname"></span></p>
+            <p><strong>Age:</strong> <span id="user_age"></span></p>
+        </div>
+    </section>
+    <section class="count-reload">
+        <h2>Кількість перезавантажень</h2>
+        <p id="reload_count">0</p>
+    </section>
+    <section class="table-reload">
+        <h2>Кількість перезавантажень в сесії</h2>
+        <a href="./sessions.html">Таблиця перезавантажень</a>
+    </section>
+    <section class="range-users">
+        <h2>Слайдер користувачів</h2>
+        <div id="wrap-users"></div>
+        <img src="./images/arrow-left.svg" id="prev" class="btn" alt="arrow-left">
+        <img src="./images/arrow-right.svg" id="next" class="btn" alt="arrow-right">
+    </section>
+    <section class="remove-text">
+        <h2>Видалення тексту</h2>
+        <div class="content">
+            <p id="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, quaerat.</p>
+            <button id="removeBtn"></button>
+        </div>
+    </section>
+    <section class="check-age">
+        <h2>Перевірка віку</h2>
+        <form name="check_user_age">
+            <label for="customer_age">Age:</label>
+            <input type="number" id="customer_age" min="0" placeholder="Enter your age">
+            <input id="checkBtn" type="submit" value="Check">
+        </form>
+        <div class="wrap-modal-age">
+            <div class="modal-age">
+                <img src="./images/close.svg" class="close" alt="close">
+                <img src="./images/check-mark.png" class="check-image" alt="user">
+                <h3></h3>
+            </div>
+        </div>
+    </section>
+    <section class="user-form">
+        <h2>Дані таблиці</h2>
+        <form name="table_data">
+            <label for="count_rows">Count rows:</label>
+                <input type="number" name="count_rows" id="count_rows" placeholder="Count rows">
+            <label for="count_columns">Count columns:</label>
+            <input type="number" name="count_columns" id="count_columns" placeholder="Count columns">
+            <label for="value_cell">Value cell:</label>
+            <input type="text" name="value_cell" id="value_cell" placeholder="Value cell">
+            <input type="submit" value="Build">
+        </form>
+
+        <div class="output-table"></div>
+    </section>
+    <section class="count-money">
+        <h2>Кількість грошей</h2>
+        <p id="reload_money"><span>100</span> грн</p>
+    </section>
+</main>
+
+
+<script src="./scripts/main.js"></script>
+</body>
+</html>
