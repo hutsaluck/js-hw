@@ -1,0 +1,244 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+main section {
+    margin-bottom: 50px;
+}
+
+/* Users */
+
+.wrap-users {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.wrap-users .user {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
+    padding: 20px;
+    cursor: pointer;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+}
+
+.wrap-users .user > img {
+    width: 50%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    justify-self: center;
+}
+
+.wrap-users .user .recipe-content {
+    padding: 20px;
+}
+
+.wrap-users .user > img {
+    transition: all .5s;
+}
+
+.wrap-users .user:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.wrap-users .user:hover > img {
+    transform: scale(1.15);
+}
+
+/* Content user */
+.content-user {
+    padding: 20px 100px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    justify-content: center;
+    gap: 20px;
+}
+
+.content-user a {
+    font-weight: bold;
+}
+
+.content-user a:hover {
+    color: #ffffff;
+    text-shadow: #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px;
+}
+
+.content-user .wrap-additional-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.content-user button.btn {
+    background-color: gray;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 15px;
+    margin-top: 50px;
+    display: block;
+    width: fit-content;
+    transition: all .2s ease-in-out;
+    text-shadow: #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px;
+}
+
+.content-user button.btn:hover {
+    transform: scale(1.02);
+}
+
+.wrap-modal-post {
+    display: none;
+    background: rgba(50, 50, 50, 0.1);
+    backdrop-filter: blur(2.5px);
+    height: 100vh;
+    width: 100vw;
+    min-height: fit-content;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.wrap-modal-post:has(.modal-post.show) {
+    display: block;
+}
+
+.modal-post {
+    position: absolute;
+    top: 5%;
+    left: 8%;
+    width: 80%;
+    height: 80%;
+    border-radius: 30px;
+    padding: 25px;
+
+    background-color: #fff;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    overflow: scroll;
+}
+
+
+.modal-post h2 {
+    font-family: 'Montserrat ExtraBold', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: normal;
+    color: #ffffff;
+    text-shadow: #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px;
+}
+
+
+.modal-post img.close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+}
+
+
+.modal-post .posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-post .posts .post {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.modal-post .posts .post .content-post {
+    padding: 10px;
+}
+
+.modal-post .posts .post .content-post h3 {
+    text-align: center;
+}
+
+.modal-post .posts .post img {
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+}
+
+/* Comments */
+.post-content{
+    margin: 0 20%;
+}
+.post-content h1.title{
+    font-family: 'Montserrat ExtraBold', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: normal;
+    color: #ffffff;
+    text-shadow: #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px;
+    text-align: center;
+}
+
+.post-content .comment-content{
+    margin-top: 40px;
+    display: grid;
+    grid-auto-flow: row;
+    gap: 20px;
+}
+.post-content .comment-content .comment{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 20px;
+    border-radius: 15px;
+    padding: 20px;
+}
+.post-content .comment-content .comment:hover{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.post-content .comment-content .comment:hover img{
+    transform: scale(1.15);
+}
+
+.post-content .comment-content .comment img{
+    width: 100%;
+    transition: all .5s;
+}
+.post-content .comment-content .comment a{
+    padding-left: 30px;
+    position: relative;
+}
+
+.post-content .comment-content .comment a:before{
+    content: '';
+    background-image: url(../images/mail.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    transition: all .5s;
+}
+.post-content .comment-content .comment:hover a:before{
+    transform: scale(1.15);
+}
+
