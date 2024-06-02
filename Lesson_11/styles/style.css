@@ -1,0 +1,323 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+main section {
+    margin-bottom: 50px;
+}
+
+/* Carts */
+.wrap-carts {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap-carts .cart {
+    display: grid;
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
+    position: relative;
+    padding: 20px;
+}
+
+.wrap-carts .cart > img {
+    transition: all .5s;
+}
+
+.wrap-carts .cart:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.wrap-carts .cart:hover > img, .wrap-carts .cart:hover .cart-info p:before {
+    transform: scale(1.15);
+}
+
+
+.wrap-carts .cart h2 {
+    font-family: 'Montserrat ExtraBold', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: normal;
+    color: #ffffff;
+    text-shadow: #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px;
+}
+
+.wrap-carts .cart .cart-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.wrap-carts .cart .cart-info p {
+    position: relative;
+    padding-left: 30px;
+}
+
+.wrap-carts .cart .cart-info p:before {
+    transition: all .5s;
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: #202124;
+}
+
+.wrap-carts .cart .cart-info .total:before {
+    background-image: url(../images/money.svg);
+}
+
+.wrap-carts .cart .cart-info .discountedTotal:before {
+    background-image: url(../images/discount.svg);
+}
+
+.wrap-carts .cart .cart-info .userId:before {
+    background-image: url(../images/user.svg);
+}
+
+.wrap-carts .cart .cart-info .totalProducts:before {
+    background-image: url(../images/product.svg);
+}
+
+.wrap-carts .cart > img {
+    width: 50%;
+    justify-self: center;
+}
+
+
+.wrap-modal-cart {
+    display: none;
+    background: rgba(50, 50, 50, 0.1);
+    backdrop-filter: blur(2.5px);
+    height: 100vh;
+    width: 100vw;
+    min-height: fit-content;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.wrap-modal-cart:has(.modal-cart.show) {
+    display: block;
+}
+
+.modal-cart {
+    position: absolute;
+    top: 5%;
+    left: 8%;
+    width: 80%;
+    height: 80%;
+    border-radius: 30px;
+    padding: 25px;
+
+    background-color: #fff;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    overflow: scroll;
+}
+
+
+.modal-cart h2 {
+    font-family: 'Montserrat ExtraBold', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: normal;
+    color: #ffffff;
+    text-shadow: #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px;
+}
+
+
+.modal-cart img.close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+}
+
+
+.modal-cart .products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-cart .products .product {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.modal-cart .products .product .content-product {
+    padding: 10px;
+}
+
+.modal-cart .products .product .content-product h3 {
+    text-align: center;
+}
+
+.modal-cart .products .product img {
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+}
+
+.modal-cart .products .product img.discount {
+    width: 50px;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+
+.modal-cart .products .product img.cross {
+    width: 50px;
+    position: absolute;
+    left: 20px;
+    top: 5px;
+    z-index: 9;
+    opacity: .8;
+}
+
+.modal-cart .products .product .discountPercentage {
+    position: absolute;
+    right: 40px;
+    top: -5px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+}
+
+.modal-cart .products .product .total {
+    position: absolute;
+    left: 20px;
+    top: -15px;
+    font-family: 'Montserrat ExtraBold', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: normal;
+    color: #ffffff;
+    text-shadow: #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px;
+    text-decoration: line-through;
+}
+
+.modal-cart .products .product .product-total {
+    position: absolute;
+    left: 20px;
+    bottom: 65px;
+    font-family: 'Montserrat ExtraBold', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: normal;
+    color: #ffffff;
+    text-shadow: #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px;
+    text-align: center;
+}
+
+/* Recipes */
+
+.wrap-recipes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.wrap-recipes .recipe {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
+}
+
+.wrap-recipes .recipe > img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.wrap-recipes .recipe .recipe-content {
+    padding: 20px;
+}
+
+/* Users */
+
+.wrap-users {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.wrap-users .user {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 15px;
+    padding: 20px;
+    cursor: pointer;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+}
+
+.wrap-users .user > img {
+    width: 50%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    justify-self: center;
+}
+
+.wrap-users .user .recipe-content {
+    padding: 20px;
+}
+
+.wrap-users .user > img {
+    transition: all .5s;
+}
+
+.wrap-users .user:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.wrap-users .user:hover > img {
+    transform: scale(1.15);
+}
+
+/* Content user */
+.content-user {
+    padding: 20px 100px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    justify-content: center;
+    gap: 20px;
+}
+
+.content-user a {
+    font-weight: bold;
+}
+
+.content-user a:hover {
+    color: #ffffff;
+    text-shadow: #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px;
+}
+
+.content-user .wrap-additional-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
