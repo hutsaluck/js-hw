@@ -60,6 +60,6 @@ document.querySelector(`.modal-post .close`).addEventListener(`click`, e => {
     document.querySelector(`.modal-post`).classList.remove(`show`)
 })
 
-document.querySelector(`.wrap-modal-post`).addEventListener(`click`, e => {
+document.querySelector(`.bg-modal`).addEventListener(`click`, e => {
     document.querySelector(`.modal-post`).classList.remove(`show`)
 })

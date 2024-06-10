@@ -203,6 +203,9 @@ main section {
     font-weight: bold;
     font-size: 18px;
     color: #fff;
+    font-family: 'Montserrat ExtraBold', sans-serif;
+    line-height: normal;
+    text-shadow: #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px, #000 0 0 1px;
 }
 
 .modal-cart .products .product .total {

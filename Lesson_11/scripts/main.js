@@ -14,7 +14,7 @@ fetch('https://dummyjson.com/carts')
                                 <p class="total">$${cart.total.toFixed(2)}</p>
                                 <p class="discountedTotal">$${cart.discountedTotal}</p>
                                 <p class="userId">${user.firstName} ${user.lastName}</p>
-                                <p class="totalProducts">${cart.totalProducts.toFixed(2)} (<span class="totalQuantity">${cart.totalQuantity}</span>)</p>
+                                <p class="totalProducts">${cart.totalProducts} (<span class="totalQuantity">${cart.totalQuantity}</span>)</p>
                             </div>
                         </div>`
                     document.querySelector(`.wrap-carts`).innerHTML = cartContent
